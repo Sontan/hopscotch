@@ -1,5 +1,23 @@
 ## Change Log
 
+### v0.2.5 (2015/07/20)
+ * [#188](https://github.com/linkedin/hopscotch/pull/188) [GH-188] No event called after tour is finished
+ * [#193](https://github.com/linkedin/hopscotch/pull/193) [GH-190] Close button should be a button
+ * [#187](https://github.com/linkedin/hopscotch/pull/187) [GH-24] Recover when tour bubble DOM element is destroyed
+ * [#183](https://github.com/linkedin/hopscotch/pull/183) Remove moot `version` property from bower.json
+ * [#181](https://github.com/linkedin/hopscotch/pull/181) Remove all styling from hopscotch.less
+ * [#182](https://github.com/linkedin/hopscotch/pull/182) [GH-175] totalSteps should be i18n-ified
+ * [#178](https://github.com/linkedin/hopscotch/pull/178) [GH-177] Require existing target element for stand-alone callouts
+ * [#176](https://github.com/linkedin/hopscotch/pull/176) [GH-172] documentIsReady is when document.readyState is complete
+
+### v0.2.4 (2015/04/28)
+ * [#168](https://github.com/linkedin/hopscotch/pull/168) Gracefully handle steps without valid target
+ * [#167](https://github.com/linkedin/hopscotch/pull/167) Hide previous button on first step, even if steps are skipped.
+ * [#153](https://github.com/linkedin/hopscotch/pull/153) Tour ID as part of classes
+ * [#151](https://github.com/linkedin/hopscotch/pull/151) Add support for AMD and CommonJS
+ * [#146](https://github.com/linkedin/hopscotch/pull/146) Check tour & callout IDs for invalid characters
+ * [#142](https://github.com/linkedin/hopscotch/pull/142) Simple bower config file added.
+
 ### v0.2.3 (2014/12/10)
 
  * [#139](https://github.com/linkedin/hopscotch/pull/139) RefreshBubblePosition updates all known callouts

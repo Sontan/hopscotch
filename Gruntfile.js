@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     banner : ['/**! <%=pkg.name%> - v<%=pkg.version%>',
         '*',
-        '* Copyright 2014 LinkedIn Corp. All rights reserved.',
+        '* Copyright 2015 LinkedIn Corp. All rights reserved.',
         '*',
         '* Licensed under the Apache License, Version 2.0 (the "License");',
         '* you may not use this file except in compliance with the License.',
@@ -116,7 +116,7 @@ module.exports = function(grunt) {
     jst: {
       compile: {
         options: {
-          namespace: 'hopscotch.templates',
+          namespace: 'templates',
           processName: function(filename){
             var splitName = filename.split('/'),
                 sanitized = splitName[splitName.length - 1].replace('.jst', '').replace(new RegExp('-', 'g'), '_');
@@ -181,50 +181,35 @@ module.exports = function(grunt) {
         src: '<%=paths.build%>/js/hopscotch.min.js',
         options: {
           keepRunner: false,
-          specs: ['<%=paths.test%>/js/*.js'],
-          vendor: [
-            'node_modules/jquery/dist/jquery.min.js',
-            'node_modules/sinon/pkg/sinon-1.9.1.js'
-          ],
-          styles: [
-            '<%=paths.build%>/css/hopscotch.min.css'
-          ]
+          specs:  ['<%=paths.test%>/js/*.js'],
+          vendor: ['node_modules/jquery/dist/jquery.min.js'],
+          styles: ['<%=paths.build%>/css/hopscotch.min.css']
         }
       },
       testDev: {
         src: '<%=paths.build%>/js/hopscotch.js',
         options: {
           keepRunner: false,
-          specs: ['<%=paths.test%>/js/*.js'],
-          vendor: [
-            'node_modules/jquery/dist/jquery.min.js',
-            'node_modules/sinon/pkg/sinon-1.9.1.js'
-          ],
-          styles: [
-            '<%=paths.build%>/css/hopscotch.css'
-          ]
+          specs:  ['<%=paths.test%>/js/*.js'],
+          vendor: ['node_modules/jquery/dist/jquery.min.js'],
+          styles: ['<%=paths.build%>/css/hopscotch.css']
         }
       },
       coverage: {
         src: '<%=paths.build%>/js/hopscotch.js',
         options: {
           keepRunner: false,
-          specs: ['<%=paths.test%>/js/*.js'],
-          vendor: [
-            'node_modules/jquery/dist/jquery.min.js',
-            'node_modules/sinon/pkg/sinon-1.9.1.js'
-          ],
-          styles: [
-            '<%=paths.build%>/css/hopscotch.css'
-          ],
+          specs:  ['<%=paths.test%>/js/*.js'],
+          vendor: ['node_modules/jquery/dist/jquery.min.js'],
+          styles: ['<%=paths.build%>/css/hopscotch.css'],
           template: require('grunt-template-jasmine-istanbul'),
           templateOptions: {
             coverage: '<%=paths.build%>/coverage/coverage.json',
             report: '<%=paths.build%>/coverage',
             thresholds: {
-              lines: 75,
-              statements: 75,
-              branches: 60,
+              lines: 80,
+              statements: 80,
+              branches: 65,
               functions: 80
             }
           }
@@ -249,7 +234,7 @@ module.exports = function(grunt) {
     },
     bump: {
       options: {
-        files: ['package.json', 'bower.json'],
+        files: ['package.json'],
         updateConfigs: ['pkg'],
         push: false,
         commit: true,
